@@ -1,0 +1,50 @@
+第一行android代码
+    1.android 系统架构 1.linux系统架构 ：为底层硬件提供了驱动如：显示、音频、照相、蓝牙、wi-fi 、电源管理等
+    2.系统运行库：sqlLite 数据库支持 、openGl|es 3d绘图支持 、webkit提供浏览器支持
+    还包括android运行库 5.0之前是dalvik  之后是ART运行环境
+    3.应用层框架 api
+    4.应用层 应用
+    2008年android 1.0  android2.3 api10  android4.0api 15 android5.0  api21  andorid5.1 api22   android6.0  api23  android7.0 api24
+
+    android  四大组件 activity  servic broadcase Receive  content provider
+
+    android 环境搭建 需要 jdk sdk  android Studio
+    工程 目录 app项目代码
+              gradle 
+              .gitignore  git版本控制忽略
+              .build.gradle 全局gradle 脚本
+              .gradle.properties  全集配置文件
+              gradlew gradlew.bat 命运行运行gradle 
+              hellworld.iml 自动生成的
+              local.properties sdk路径
+              settings.gradle 引入模块
+              build 中 libs  第三方jar
+                             androidTest 测试用例
+                             res 图片、布局、字符串 drawable layout values
+                             androidManifest.xml 整个项目的配置文件
+                             test
+                             .gtiignore
+                             app.iml
+                             build.gradle
+                             proguard-rules.pro 代码混淆规则 防止别人破解
+            1.androidmainfest。xml 中配件程序穷的那个主activity
+            java 代码中有setContentView(R.layOut.hell_world_layout) 应用布局文件
+            layout 文件中有页面的button文件 在res中里面mipmap-xxxhdpi放入图片 
+            字符串的引用  R.string.app_name  || @String/app_name
+            android Log 工具
+            Log.v()\Log.d()\Log.i()\Log.w()\Log.e() 5级
+    第二章 avtivity
+        1.创建活动 2.创建布局3.manifest中注册  @+id/
+        2.Toast  显示一行话  Toast.makeText(this,"text",Toast.Length_short).show()
+        button.setOnClickListener(new View.onClickListener(){
+            @Override
+            public void onClick(View v){
+
+        }
+        })
+        3.findViewById
+        4.menu
+            onCreateOptionsMenu()  onOptionsItemSelected()
+        5.销毁一个activity  finish()
+        6.显式Intent  onClickListener 中  Intent intent=new Intent(FirstActivity.this,secondActivity.class)
+        StartActivity(intent);
