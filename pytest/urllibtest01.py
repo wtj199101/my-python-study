@@ -7,12 +7,12 @@ __author__='wtj'
 这个学习blogcookie登录的例子 博客地址 ：http://blog.csdn.net/pipisorry/article/details/47948065
 '''
 LOGIN_URL="http://acm.hit.edu.cn/hoj/system/login"
-values={'user':'wjjwyohsff','password':'123456','submit':'Login'}
+values={'user':'####','password':'###','submit':'Login'}
 postDate=urllib.parse.urlencode(values).encode()
 user_agent="Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.87 Safari/537.36"
 headers={'User-Agent':user_agent,'Connection':'keep-alive'}
 cooke_filename='cookie.txt'
-cookie=http.cookiejar.MozillaCookieJar(cooke_filename)
+cookie=http.cookiejar.LWPCookieJar(cooke_filename)
 handler=urllib.request.HTTPCookieProcessor(cookie)
 opener=urllib.request.build_opener(handler)
 request=urllib.request.Request(LOGIN_URL,postDate,headers)
@@ -24,7 +24,7 @@ try:
 except urllib.error.URLError as e:
 	print(e.code,";",e.reason)
 cookie.save(ignore_discard=True,ignore_expires=True)
-print(cookie)
+#print(cookie)
 for item in cookie:
 	print(item.name)
 	print(item.value)

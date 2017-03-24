@@ -1,5 +1,2 @@
-# Netscape HTTP Cookie File
-# http://curl.haxx.se/rfc/cookie_spec.html
-# This is a generated file!  Do not edit.
-
-acm.hit.edu.cn	FALSE	/	FALSE		PHPSESSID	5bd264c98964c0d9e73591b8a83da418
+#LWP-Cookies-2.0
+Set-Cookie3: PHPSESSID=6c282118d5fb827322c2ddeecce929ec; path="/"; domain="acm.hit.edu.cn"; path_spec; discard; version=0
