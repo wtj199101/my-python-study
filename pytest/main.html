@@ -1,0 +1,951 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<title>HIT ACM/ICPC Group - Online Judge</title>
+	<meta name="description" content=""/>
+	<meta name="keywords" content="ACM/ICPC, ACM/ICPC Group, HIT, Harbin Institute of Technology, HIT, online judge, algorithm, problem solving,哈尔滨工业大学, 哈工大, 在线评测, 算法, 问题求解"/>
+	<link rel="stylesheet" href="http://acm.hit.edu.cn/hoj/static/new/css/style.css" type="text/css">
+	<script src="http://acm.hit.edu.cn/hoj/static/js/jquery.js" type="text/javascript"></script>
+	<script src="http://acm.hit.edu.cn/hoj/static/js/bug-report.js" type="text/javascript"></script>
+	<!--[if lte IE 6]>
+	<link rel="stylesheet" href="http://acm.hit.edu.cn/hoj/static/new/css/ie6.css" type="text/css"/>
+	<![endif]-->
+<!-- Google Analytics -->
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-1350819-8']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+<!-- Google Analytics End -->
+</head>
+<body>
+
+	<div id="report-bug" style="display:none;">
+		<h4>Description about the bug</h4>
+		<form>
+			<table>
+				<tbody>
+					<tr><td><textarea cols="36" rows="6" id="bug-text"></textarea></td></tr>
+					<tr><td>
+						<input type="button" name="submit" id="submit-report" class="report-button" value="Submit"/>
+						<input type="button" name="reset" id="reset-report" class="report-button" value="Reset"/>
+						<input type="button" name="close" id="close-report" class="report-button" value="Close"/>
+						<input type="hidden" name="webroot" id="web-root" value="http://acm.hit.edu.cn/hoj/" />
+					</td></tr>
+				</tbody>
+			</table>
+		</form>
+	</div>
+
+	<div id="wrapper">
+		<div id="wrapper2">
+			<div id="header">
+				<div id="header-l">
+					<div id="header-r"><div id="logo"></div></div>
+				</div>
+			</div>
+			<div id="nav">
+				<div id="nav-l">
+					<div id="nav-r">
+						<ul id="top-nav">
+<li><a href="http://acm.hit.edu.cn">Home</a></li><li class="active" ><a href="http://acm.hit.edu.cn/hoj/problem/volume">Online Judge</a></li><li><a href="http://acm.hit.edu.cn/hoj/forum/boards">Forum</a></li><li><a href="http://acm.hit.edu.cn/wiki">Wiki</a></li>
+<li class="right"><a id="open-report" href="javascript:void(0)" title="If you find a bug on this page, please tell us.">Report Bug...</a></li>
+<li class="right"><a href="http://acm.hit.edu.cn/hoj/bug/list">The Bugs List</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div id="main">
+				<div id="main-in">
+					<div id="main-in-tl" class="main-corner"></div>
+					<div id="main-in-tr" class="main-corner"></div>
+					<div id="main-in-bl" class="main-corner"></div>
+					<div id="main-in-br" class="main-corner"></div>
+
+<div id="sidebar">
+	<div class="block">
+		<form action="http://acm.hit.edu.cn/hoj/problem/view" method="get" style="padding-bottom:15px;">
+			<input type="text" name="id" onfocus="javascript:if(this.value=='Jump to problem...')this.value='';"
+			 onblur="javascript:if(this.value=='')this.value='Jump to problem...';" value="Jump to problem..." style="width:120px;border:1px solid #ccc;" />
+<input type="submit" value="Go" />
+		</form>
+		<h3>Problems</h3>
+<ul>
+<li class="active" ><a href="http://acm.hit.edu.cn/hoj/problem/volume?page=1">Volumes</a></li><li><a href="http://acm.hit.edu.cn/hoj/problem/working-on">I'm Working On</a></li><li><a href="http://acm.hit.edu.cn/hoj/problem/solved">Solved by Me</a></li><li><a href="http://acm.hit.edu.cn/hoj/rank/overall">Rank</a></li><li><a href="http://acm.hit.edu.cn/hoj/problem/status">Status</a></li><li><a href="http://acm.hit.edu.cn/hoj/problem/status?author=wjjwyohsff">My Status</a></li></ul>
+	</div>
+	<div class="block">
+		<h3>Contests</h3>
+<ul>
+<li><a href="http://acm.hit.edu.cn/hoj/contest/open">Open Contests</a></li><li><a href="http://acm.hit.edu.cn/hoj/contest/my">My Contests</a></li><li><a href="http://acm.hit.edu.cn/hoj/contest/all">All Contests</a></li><li><a href="http://acm.hit.edu.cn/hoj/contest/custom">Custom Contests</a></li><li><a href="http://acm.hit.edu.cn/hoj/contest/other">Other Contests</a></li></ul>
+	</div>
+<!--
+	<div class="block">
+		<h3>Discussion</h3>
+<ul>
+</ul>
+	</div>
+-->
+	<div class="block">
+		<h3>Meta : wjjwyohsff</h3>
+		<ul>
+<li><a href="http://acm.hit.edu.cn/hoj/tag/my">My Tags</a></li><li><a href="http://acm.hit.edu.cn/hoj/user/changepw">Change Password</a></li>			<li><a href="http://acm.hit.edu.cn/hoj/system/login?logout=true">Logout</a></li>
+			</ul>
+	</div>
+</div>
+<div id="content">
+<script type = "text/javascript">
+function inputname(){
+    document.getElementById('focus').value = '';
+    document.getElementById('focus').style.color = "black";
+}
+</script>
+        <h1>Problem Set</h1>
+	<div class="navigation" style="margin-bottom:10px;">
+		<ul>
+			<li class="first"><a>Volumn</a></li>
+					<li><a href="http://acm.hit.edu.cn/hoj/problem/volume?page=1">First</a></li>
+            <li class = "current"><a href = "http://acm.hit.edu.cn/hoj/problem/volume?page=1">1000</a></li><li><a href = "http://acm.hit.edu.cn/hoj/problem/volume?page=2">1100</a></li><li><a href = "http://acm.hit.edu.cn/hoj/problem/volume?page=3">1200</a></li><li><a href = "http://acm.hit.edu.cn/hoj/problem/volume?page=4">1300</a></li><li><a href = "http://acm.hit.edu.cn/hoj/problem/volume?page=5">1400</a></li><li><a href = "http://acm.hit.edu.cn/hoj/problem/volume?page=6">1500</a></li><li><a href = "http://acm.hit.edu.cn/hoj/problem/volume?page=7">1600</a></li><li><a href = "http://acm.hit.edu.cn/hoj/problem/volume?page=8">1700</a></li><li><a href = "http://acm.hit.edu.cn/hoj/problem/volume?page=9">1800</a></li><li><a href = "http://acm.hit.edu.cn/hoj/problem/volume?page=10">1900</a></li><li><a href = "http://acm.hit.edu.cn/hoj/problem/volume?page=11">2000</a></li><li><a href = "http://acm.hit.edu.cn/hoj/problem/volume?page=12">2100</a></li><li><a href = "http://acm.hit.edu.cn/hoj/problem/volume?page=13">2200</a></li>			<li class="right"><a href="http://acm.hit.edu.cn/hoj/problem/volume?page=23">Last</a></li>
+		</ul>
+	</div>
+
+<table class="list">
+	<thead>
+		<tr>
+			<th width="5%" align="center"></th>
+			<th width="10%" align="left">ID</th>
+			<th width="35%" align="left">Title</th>
+			<th width="28%" align="left">Ratio</th>
+			<th align="center"></th> 
+		</tr>
+	</thead>
+                <tbody> 
+	                            <tr class="even">
+                                <td>
+                                                                </td>
+                                <td>1001</td>
+                                <td><a href="http://acm.hit.edu.cn/hoj/problem/view?id=1001"><ins>A+B</ins></a></td>
+                                <td><div class="ratio-outside"><div class="ratio-inside" style="width: 48.03%"></div></div></td>
+                                <td>(11727 / 24418) 48.03%</td>
+                            </tr>
+                                            <tr class="odd">
+                                <td>
+                                                                </td>
+                                <td>1002</td>
+                                <td><a href="http://acm.hit.edu.cn/hoj/problem/view?id=1002"><ins>A+B+C</ins></a></td>
+                                <td><div class="ratio-outside"><div class="ratio-inside" style="width: 20.22%"></div></div></td>
+                                <td>(6627 / 32769) 20.22%</td>
+                            </tr>
+                                            <tr class="even">
+                                <td>
+                                                                </td>
+                                <td>1003</td>
+                                <td><a href="http://acm.hit.edu.cn/hoj/problem/view?id=1003"><ins>Mixing Milk</ins></a></td>
+                                <td><div class="ratio-outside"><div class="ratio-inside" style="width: 42.12%"></div></div></td>
+                                <td>(4024 / 9554) 42.12%</td>
+                            </tr>
+                                            <tr class="odd">
+                                <td>
+                                                                </td>
+                                <td>1004</td>
+                                <td><a href="http://acm.hit.edu.cn/hoj/problem/view?id=1004"><ins>Prime Palindromes</ins></a></td>
+                                <td><div class="ratio-outside"><div class="ratio-inside" style="width: 21.94%"></div></div></td>
+                                <td>(4882 / 22253) 21.94%</td>
+                            </tr>
+                                            <tr class="even">
+                                <td>
+                                                                </td>
+                                <td>1005</td>
+                                <td><a href="http://acm.hit.edu.cn/hoj/problem/view?id=1005"><ins>Fast Food</ins></a></td>
+                                <td><div class="ratio-outside"><div class="ratio-inside" style="width: 30.30%"></div></div></td>
+                                <td>(1198 / 3954) 30.30%</td>
+                            </tr>
+                                            <tr class="odd">
+                                <td>
+                                                                </td>
+                                <td>1006</td>
+                                <td><a href="http://acm.hit.edu.cn/hoj/problem/view?id=1006"><ins>Weird Clock</ins></a></td>
+                                <td><div class="ratio-outside"><div class="ratio-inside" style="width: 20.13%"></div></div></td>
+                                <td>(2156 / 10709) 20.13%</td>
+                            </tr>
+                                            <tr class="even">
+                                <td>
+                                                                </td>
+                                <td>1007</td>
+                                <td><a href="http://acm.hit.edu.cn/hoj/problem/view?id=1007"><ins>SPF</ins></a></td>
+                                <td><div class="ratio-outside"><div class="ratio-inside" style="width: 30.11%"></div></div></td>
+                                <td>(548 / 1820) 30.11%</td>
+                            </tr>
+                                            <tr class="odd">
+                                <td>
+                                                                </td>
+                                <td>1008</td>
+                                <td><a href="http://acm.hit.edu.cn/hoj/problem/view?id=1008"><ins>How many N</ins></a></td>
+                                <td><div class="ratio-outside"><div class="ratio-inside" style="width: 23.19%"></div></div></td>
+                                <td>(1875 / 8085) 23.19%</td>
+                            </tr>
+                                            <tr class="even">
+                                <td>
+                                                                </td>
+                                <td>1009</td>
+                                <td><a href="http://acm.hit.edu.cn/hoj/problem/view?id=1009"><ins>Fat Cat</ins></a></td>
+                                <td><div class="ratio-outside"><div class="ratio-inside" style="width: 31.19%"></div></div></td>
+                                <td>(750 / 2405) 31.19%</td>
+                            </tr>
+                                            <tr class="odd">
+                                <td>
+                                                                </td>
+                                <td>1010</td>
+                                <td><a href="http://acm.hit.edu.cn/hoj/problem/view?id=1010"><ins>The Angle</ins></a></td>
+                                <td><div class="ratio-outside"><div class="ratio-inside" style="width: 25.57%"></div></div></td>
+                                <td>(2612 / 10216) 25.57%</td>
+                            </tr>
+                                            <tr class="even">
+                                <td>
+                                                                </td>
+                                <td>1011</td>
+                                <td><a href="http://acm.hit.edu.cn/hoj/problem/view?id=1011"><ins>UNIX ls</ins></a></td>
+                                <td><div class="ratio-outside"><div class="ratio-inside" style="width: 15.82%"></div></div></td>
+                                <td>(591 / 3735) 15.82%</td>
+                            </tr>
+                                            <tr class="odd">
+                                <td>
+                                                                </td>
+                                <td>1012</td>
+                                <td><a href="http://acm.hit.edu.cn/hoj/problem/view?id=1012"><ins>Decoding Task</ins></a></td>
+                                <td><div class="ratio-outside"><div class="ratio-inside" style="width: 25.68%"></div></div></td>
+                                <td>(424 / 1651) 25.68%</td>
+                            </tr>
+                                            <tr class="even">
+                                <td>
+                                                                </td>
+                                <td>1013</td>
+                                <td><a href="http://acm.hit.edu.cn/hoj/problem/view?id=1013"><ins>Just The Facts</ins></a></td>
+                                <td><div class="ratio-outside"><div class="ratio-inside" style="width: 32.87%"></div></div></td>
+                                <td>(543 / 1652) 32.87%</td>
+                            </tr>
+                                            <tr class="odd">
+                                <td>
+                                                                </td>
+                                <td>1014</td>
+                                <td><a href="http://acm.hit.edu.cn/hoj/problem/view?id=1014"><ins>Niven Numbers</ins></a></td>
+                                <td><div class="ratio-outside"><div class="ratio-inside" style="width: 18.13%"></div></div></td>
+                                <td>(1017 / 5609) 18.13%</td>
+                            </tr>
+                                            <tr class="even">
+                                <td>
+                                                                </td>
+                                <td>1015</td>
+                                <td><a href="http://acm.hit.edu.cn/hoj/problem/view?id=1015"><ins>Nearly prime numbers</ins></a></td>
+                                <td><div class="ratio-outside"><div class="ratio-inside" style="width: 17.55%"></div></div></td>
+                                <td>(937 / 5339) 17.55%</td>
+                            </tr>
+                                            <tr class="odd">
+                                <td>
+                                                                </td>
+                                <td>1016</td>
+                                <td><a href="http://acm.hit.edu.cn/hoj/problem/view?id=1016"><ins>Joseph's problem I</ins></a></td>
+                                <td><div class="ratio-outside"><div class="ratio-inside" style="width: 31.66%"></div></div></td>
+                                <td>(600 / 1895) 31.66%</td>
+                            </tr>
+                                            <tr class="even">
+                                <td>
+                                                                </td>
+                                <td>1017</td>
+                                <td><a href="http://acm.hit.edu.cn/hoj/problem/view?id=1017"><ins>Joseph's problem II</ins></a></td>
+                                <td><div class="ratio-outside"><div class="ratio-inside" style="width: 49.30%"></div></div></td>
+                                <td>(565 / 1146) 49.30%</td>
+                            </tr>
+                                            <tr class="odd">
+                                <td>
+                                                                </td>
+                                <td>1018</td>
+                                <td><a href="http://acm.hit.edu.cn/hoj/problem/view?id=1018"><ins>Multiple</ins></a></td>
+                                <td><div class="ratio-outside"><div class="ratio-inside" style="width: 26.15%"></div></div></td>
+                                <td>(405 / 1549) 26.15%</td>
+                            </tr>
+                                            <tr class="even">
+                                <td>
+                                                                </td>
+                                <td>1019</td>
+                                <td><a href="http://acm.hit.edu.cn/hoj/problem/view?id=1019"><ins>Grandpa's Other Estate</ins></a></td>
+                                <td><div class="ratio-outside"><div class="ratio-inside" style="width: 43.66%"></div></div></td>
+                                <td>(341 / 781) 43.66%</td>
+                            </tr>
+                                            <tr class="odd">
+                                <td>
+                                                                </td>
+                                <td>1020</td>
+                                <td><a href="http://acm.hit.edu.cn/hoj/problem/view?id=1020"><ins>Afshung Pizza Delivery</ins></a></td>
+                                <td><div class="ratio-outside"><div class="ratio-inside" style="width: 26.20%"></div></div></td>
+                                <td>(82 / 313) 26.20%</td>
+                            </tr>
+                                            <tr class="even">
+                                <td>
+                                                                </td>
+                                <td>1021</td>
+                                <td><a href="http://acm.hit.edu.cn/hoj/problem/view?id=1021"><ins>Housing Complexes</ins></a></td>
+                                <td><div class="ratio-outside"><div class="ratio-inside" style="width: 48.48%"></div></div></td>
+                                <td>(175 / 361) 48.48%</td>
+                            </tr>
+                                            <tr class="odd">
+                                <td>
+                                                                </td>
+                                <td>1022</td>
+                                <td><a href="http://acm.hit.edu.cn/hoj/problem/view?id=1022"><ins>Spacecraft Malfunction</ins></a></td>
+                                <td><div class="ratio-outside"><div class="ratio-inside" style="width: 39.30%"></div></div></td>
+                                <td>(180 / 458) 39.30%</td>
+                            </tr>
+                                            <tr class="even">
+                                <td>
+                                                                </td>
+                                <td>1023</td>
+                                <td><a href="http://acm.hit.edu.cn/hoj/problem/view?id=1023"><ins>Blue x Red = Bang</ins></a></td>
+                                <td><div class="ratio-outside"><div class="ratio-inside" style="width: 13.95%"></div></div></td>
+                                <td>(12 / 86) 13.95%</td>
+                            </tr>
+                                            <tr class="odd">
+                                <td>
+                                                                </td>
+                                <td>1024</td>
+                                <td><a href="http://acm.hit.edu.cn/hoj/problem/view?id=1024"><ins>JaWs</ins></a></td>
+                                <td><div class="ratio-outside"><div class="ratio-inside" style="width: 45.00%"></div></div></td>
+                                <td>(54 / 120) 45.00%</td>
+                            </tr>
+                                            <tr class="even">
+                                <td>
+                                                                </td>
+                                <td>1025</td>
+                                <td><a href="http://acm.hit.edu.cn/hoj/problem/view?id=1025"><ins>Skew Binary</ins></a></td>
+                                <td><div class="ratio-outside"><div class="ratio-inside" style="width: 49.47%"></div></div></td>
+                                <td>(324 / 655) 49.47%</td>
+                            </tr>
+                                            <tr class="odd">
+                                <td>
+                                                                </td>
+                                <td>1026</td>
+                                <td><a href="http://acm.hit.edu.cn/hoj/problem/view?id=1026"><ins>Run Away</ins></a></td>
+                                <td><div class="ratio-outside"><div class="ratio-inside" style="width: 34.75%"></div></div></td>
+                                <td>(90 / 259) 34.75%</td>
+                            </tr>
+                                            <tr class="even">
+                                <td>
+                                                                </td>
+                                <td>1027</td>
+                                <td><a href="http://acm.hit.edu.cn/hoj/problem/view?id=1027"><ins>Equipment Box</ins></a></td>
+                                <td><div class="ratio-outside"><div class="ratio-inside" style="width: 34.39%"></div></div></td>
+                                <td>(282 / 820) 34.39%</td>
+                            </tr>
+                                            <tr class="odd">
+                                <td>
+                                                                </td>
+                                <td>1028</td>
+                                <td><a href="http://acm.hit.edu.cn/hoj/problem/view?id=1028"><ins>Secret Code</ins></a></td>
+                                <td><div class="ratio-outside"><div class="ratio-inside" style="width: 41.86%"></div></div></td>
+                                <td>(108 / 258) 41.86%</td>
+                            </tr>
+                                            <tr class="even">
+                                <td>
+                                                                </td>
+                                <td>1029</td>
+                                <td><a href="http://acm.hit.edu.cn/hoj/problem/view?id=1029"><ins>The Proper Key</ins></a></td>
+                                <td><div class="ratio-outside"><div class="ratio-inside" style="width: 25.86%"></div></div></td>
+                                <td>(15 / 58) 25.86%</td>
+                            </tr>
+                                            <tr class="odd">
+                                <td>
+                                                                </td>
+                                <td>1030</td>
+                                <td><a href="http://acm.hit.edu.cn/hoj/problem/view?id=1030"><ins>Labyrinth</ins></a></td>
+                                <td><div class="ratio-outside"><div class="ratio-inside" style="width: 43.12%"></div></div></td>
+                                <td>(423 / 981) 43.12%</td>
+                            </tr>
+                                            <tr class="even">
+                                <td>
+                                                                </td>
+                                <td>1031</td>
+                                <td><a href="http://acm.hit.edu.cn/hoj/problem/view?id=1031"><ins>Piggy-Bank</ins></a></td>
+                                <td><div class="ratio-outside"><div class="ratio-inside" style="width: 44.74%"></div></div></td>
+                                <td>(735 / 1643) 44.74%</td>
+                            </tr>
+                                            <tr class="odd">
+                                <td>
+                                                                </td>
+                                <td>1032</td>
+                                <td><a href="http://acm.hit.edu.cn/hoj/problem/view?id=1032"><ins>Lifting the Stone</ins></a></td>
+                                <td><div class="ratio-outside"><div class="ratio-inside" style="width: 44.22%"></div></div></td>
+                                <td>(329 / 744) 44.22%</td>
+                            </tr>
+                                            <tr class="even">
+                                <td>
+                                                                </td>
+                                <td>1033</td>
+                                <td><a href="http://acm.hit.edu.cn/hoj/problem/view?id=1033"><ins>Play on Words</ins></a></td>
+                                <td><div class="ratio-outside"><div class="ratio-inside" style="width: 29.85%"></div></div></td>
+                                <td>(297 / 995) 29.85%</td>
+                            </tr>
+                                            <tr class="odd">
+                                <td>
+                                                                </td>
+                                <td>1034</td>
+                                <td><a href="http://acm.hit.edu.cn/hoj/problem/view?id=1034"><ins>Simple Arithmetics</ins></a></td>
+                                <td><div class="ratio-outside"><div class="ratio-inside" style="width: 27.80%"></div></div></td>
+                                <td>(134 / 482) 27.80%</td>
+                            </tr>
+                                            <tr class="even">
+                                <td>
+                                                                </td>
+                                <td>1035</td>
+                                <td><a href="http://acm.hit.edu.cn/hoj/problem/view?id=1035"><ins>The Bulk</ins></a></td>
+                                <td><div class="ratio-outside"><div class="ratio-inside" style="width: 40.00%"></div></div></td>
+                                <td>(48 / 120) 40.00%</td>
+                            </tr>
+                                            <tr class="odd">
+                                <td>
+                                                                </td>
+                                <td>1036</td>
+                                <td><a href="http://acm.hit.edu.cn/hoj/problem/view?id=1036"><ins>Complete the sequence!</ins></a></td>
+                                <td><div class="ratio-outside"><div class="ratio-inside" style="width: 51.45%"></div></div></td>
+                                <td>(230 / 447) 51.45%</td>
+                            </tr>
+                                            <tr class="even">
+                                <td>
+                                                                </td>
+                                <td>1037</td>
+                                <td><a href="http://acm.hit.edu.cn/hoj/problem/view?id=1037"><ins>Direct Visibility</ins></a></td>
+                                <td><div class="ratio-outside"><div class="ratio-inside" style="width: 39.95%"></div></div></td>
+                                <td>(334 / 836) 39.95%</td>
+                            </tr>
+                                            <tr class="odd">
+                                <td>
+                                                                </td>
+                                <td>1038</td>
+                                <td><a href="http://acm.hit.edu.cn/hoj/problem/view?id=1038"><ins>Complicated Expressions</ins></a></td>
+                                <td><div class="ratio-outside"><div class="ratio-inside" style="width: 47.06%"></div></div></td>
+                                <td>(96 / 204) 47.06%</td>
+                            </tr>
+                                            <tr class="even">
+                                <td>
+                                                                </td>
+                                <td>1039</td>
+                                <td><a href="http://acm.hit.edu.cn/hoj/problem/view?id=1039"><ins>Factorial</ins></a></td>
+                                <td><div class="ratio-outside"><div class="ratio-inside" style="width: 45.54%"></div></div></td>
+                                <td>(1010 / 2218) 45.54%</td>
+                            </tr>
+                                            <tr class="odd">
+                                <td>
+                                                                </td>
+                                <td>1040</td>
+                                <td><a href="http://acm.hit.edu.cn/hoj/problem/view?id=1040"><ins>The Game of Master-Mind</ins></a></td>
+                                <td><div class="ratio-outside"><div class="ratio-inside" style="width: 29.63%"></div></div></td>
+                                <td>(8 / 27) 29.63%</td>
+                            </tr>
+                                            <tr class="even">
+                                <td>
+                                                                </td>
+                                <td>1041</td>
+                                <td><a href="http://acm.hit.edu.cn/hoj/problem/view?id=1041"><ins>HotLine</ins></a></td>
+                                <td><div class="ratio-outside"><div class="ratio-inside" style="width: 66.15%"></div></div></td>
+                                <td>(43 / 65) 66.15%</td>
+                            </tr>
+                                            <tr class="odd">
+                                <td>
+                                                                </td>
+                                <td>1042</td>
+                                <td><a href="http://acm.hit.edu.cn/hoj/problem/view?id=1042"><ins>I-KeyBoard</ins></a></td>
+                                <td><div class="ratio-outside"><div class="ratio-inside" style="width: 40.91%"></div></div></td>
+                                <td>(234 / 572) 40.91%</td>
+                            </tr>
+                                            <tr class="even">
+                                <td>
+                                                                </td>
+                                <td>1043</td>
+                                <td><a href="http://acm.hit.edu.cn/hoj/problem/view?id=1043"><ins>Maya Calendar</ins></a></td>
+                                <td><div class="ratio-outside"><div class="ratio-inside" style="width: 35.87%"></div></div></td>
+                                <td>(514 / 1433) 35.87%</td>
+                            </tr>
+                                            <tr class="odd">
+                                <td>
+                                                                </td>
+                                <td>1044</td>
+                                <td><a href="http://acm.hit.edu.cn/hoj/problem/view?id=1044"><ins>Transportation</ins></a></td>
+                                <td><div class="ratio-outside"><div class="ratio-inside" style="width: 54.49%"></div></div></td>
+                                <td>(188 / 345) 54.49%</td>
+                            </tr>
+                                            <tr class="even">
+                                <td>
+                                                                </td>
+                                <td>1045</td>
+                                <td><a href="http://acm.hit.edu.cn/hoj/problem/view?id=1045"><ins>John's trip</ins></a></td>
+                                <td><div class="ratio-outside"><div class="ratio-inside" style="width: 33.89%"></div></div></td>
+                                <td>(183 / 540) 33.89%</td>
+                            </tr>
+                                            <tr class="odd">
+                                <td>
+                                                                </td>
+                                <td>1046</td>
+                                <td><a href="http://acm.hit.edu.cn/hoj/problem/view?id=1046"><ins>Pipe</ins></a></td>
+                                <td><div class="ratio-outside"><div class="ratio-inside" style="width: 53.62%"></div></div></td>
+                                <td>(111 / 207) 53.62%</td>
+                            </tr>
+                                            <tr class="even">
+                                <td>
+                                                                </td>
+                                <td>1047</td>
+                                <td><a href="http://acm.hit.edu.cn/hoj/problem/view?id=1047"><ins>Department</ins></a></td>
+                                <td><div class="ratio-outside"><div class="ratio-inside" style="width: 23.33%"></div></div></td>
+                                <td>(7 / 30) 23.33%</td>
+                            </tr>
+                                            <tr class="odd">
+                                <td>
+                                                                </td>
+                                <td>1048</td>
+                                <td><a href="http://acm.hit.edu.cn/hoj/problem/view?id=1048"><ins>Cipher</ins></a></td>
+                                <td><div class="ratio-outside"><div class="ratio-inside" style="width: 34.77%"></div></div></td>
+                                <td>(202 / 581) 34.77%</td>
+                            </tr>
+                                            <tr class="even">
+                                <td>
+                                                                </td>
+                                <td>1049</td>
+                                <td><a href="http://acm.hit.edu.cn/hoj/problem/view?id=1049"><ins>Sticks</ins></a></td>
+                                <td><div class="ratio-outside"><div class="ratio-inside" style="width: 30.75%"></div></div></td>
+                                <td>(476 / 1548) 30.75%</td>
+                            </tr>
+                                            <tr class="odd">
+                                <td>
+                                                                </td>
+                                <td>1050</td>
+                                <td><a href="http://acm.hit.edu.cn/hoj/problem/view?id=1050"><ins>Moving Object Recognition</ins></a></td>
+                                <td><div class="ratio-outside"><div class="ratio-inside" style="width: 43.46%"></div></div></td>
+                                <td>(133 / 306) 43.46%</td>
+                            </tr>
+                                            <tr class="even">
+                                <td>
+                                                                </td>
+                                <td>1051</td>
+                                <td><a href="http://acm.hit.edu.cn/hoj/problem/view?id=1051"><ins>Random Walk</ins></a></td>
+                                <td><div class="ratio-outside"><div class="ratio-inside" style="width: 26.67%"></div></div></td>
+                                <td>(8 / 30) 26.67%</td>
+                            </tr>
+                                            <tr class="odd">
+                                <td>
+                                                                </td>
+                                <td>1052</td>
+                                <td><a href="http://acm.hit.edu.cn/hoj/problem/view?id=1052"><ins>Radar Installation</ins></a></td>
+                                <td><div class="ratio-outside"><div class="ratio-inside" style="width: 30.40%"></div></div></td>
+                                <td>(404 / 1329) 30.40%</td>
+                            </tr>
+                                            <tr class="even">
+                                <td>
+                                                                </td>
+                                <td>1053</td>
+                                <td><a href="http://acm.hit.edu.cn/hoj/problem/view?id=1053"><ins>Holedox Moving</ins></a></td>
+                                <td><div class="ratio-outside"><div class="ratio-inside" style="width: 42.36%"></div></div></td>
+                                <td>(147 / 347) 42.36%</td>
+                            </tr>
+                                            <tr class="odd">
+                                <td>
+                                                                </td>
+                                <td>1054</td>
+                                <td><a href="http://acm.hit.edu.cn/hoj/problem/view?id=1054"><ins>Game Prediction</ins></a></td>
+                                <td><div class="ratio-outside"><div class="ratio-inside" style="width: 43.18%"></div></div></td>
+                                <td>(627 / 1452) 43.18%</td>
+                            </tr>
+                                            <tr class="even">
+                                <td>
+                                                                </td>
+                                <td>1055</td>
+                                <td><a href="http://acm.hit.edu.cn/hoj/problem/view?id=1055"><ins>Chocolate</ins></a></td>
+                                <td><div class="ratio-outside"><div class="ratio-inside" style="width: 47.39%"></div></div></td>
+                                <td>(145 / 306) 47.39%</td>
+                            </tr>
+                                            <tr class="odd">
+                                <td>
+                                                                </td>
+                                <td>1056</td>
+                                <td><a href="http://acm.hit.edu.cn/hoj/problem/view?id=1056"><ins>Machine Schedule</ins></a></td>
+                                <td><div class="ratio-outside"><div class="ratio-inside" style="width: 54.53%"></div></div></td>
+                                <td>(259 / 475) 54.53%</td>
+                            </tr>
+                                            <tr class="even">
+                                <td>
+                                                                </td>
+                                <td>1057</td>
+                                <td><a href="http://acm.hit.edu.cn/hoj/problem/view?id=1057"><ins>Mileage Bank</ins></a></td>
+                                <td><div class="ratio-outside"><div class="ratio-inside" style="width: 40.01%"></div></div></td>
+                                <td>(1169 / 2922) 40.01%</td>
+                            </tr>
+                                            <tr class="odd">
+                                <td>
+                                                                </td>
+                                <td>1058</td>
+                                <td><a href="http://acm.hit.edu.cn/hoj/problem/view?id=1058"><ins>Number Triangles</ins></a></td>
+                                <td><div class="ratio-outside"><div class="ratio-inside" style="width: 38.67%"></div></div></td>
+                                <td>(1072 / 2772) 38.67%</td>
+                            </tr>
+                                            <tr class="even">
+                                <td>
+                                                                </td>
+                                <td>1059</td>
+                                <td><a href="http://acm.hit.edu.cn/hoj/problem/view?id=1059"><ins>Shaping Regions</ins></a></td>
+                                <td><div class="ratio-outside"><div class="ratio-inside" style="width: 22.90%"></div></div></td>
+                                <td>(49 / 214) 22.90%</td>
+                            </tr>
+                                            <tr class="odd">
+                                <td>
+                                                                </td>
+                                <td>1060</td>
+                                <td><a href="http://acm.hit.edu.cn/hoj/problem/view?id=1060"><ins>e-present for wolfshow</ins></a></td>
+                                <td><div class="ratio-outside"><div class="ratio-inside" style="width: 4.00%"></div></div></td>
+                                <td>(1 / 25) 4.00%</td>
+                            </tr>
+                                            <tr class="even">
+                                <td>
+                                                                </td>
+                                <td>1061</td>
+                                <td><a href="http://acm.hit.edu.cn/hoj/problem/view?id=1061"><ins>Fat Cat's cousin II</ins></a></td>
+                                <td><div class="ratio-outside"><div class="ratio-inside" style="width: 44.58%"></div></div></td>
+                                <td>(296 / 664) 44.58%</td>
+                            </tr>
+                                            <tr class="odd">
+                                <td>
+                                                                </td>
+                                <td>1062</td>
+                                <td><a href="http://acm.hit.edu.cn/hoj/problem/view?id=1062"><ins>数列极差问题</ins></a></td>
+                                <td><div class="ratio-outside"><div class="ratio-inside" style="width: 26.94%"></div></div></td>
+                                <td>(1001 / 3716) 26.94%</td>
+                            </tr>
+                                            <tr class="even">
+                                <td>
+                                                                </td>
+                                <td>1063</td>
+                                <td><a href="http://acm.hit.edu.cn/hoj/problem/view?id=1063"><ins>Tree I</ins></a></td>
+                                <td><div class="ratio-outside"><div class="ratio-inside" style="width: 35.71%"></div></div></td>
+                                <td>(55 / 154) 35.71%</td>
+                            </tr>
+                                            <tr class="odd">
+                                <td>
+                                                                </td>
+                                <td>1064</td>
+                                <td><a href="http://acm.hit.edu.cn/hoj/problem/view?id=1064"><ins>Tree II</ins></a></td>
+                                <td><div class="ratio-outside"><div class="ratio-inside" style="width: 65.53%"></div></div></td>
+                                <td>(135 / 206) 65.53%</td>
+                            </tr>
+                                            <tr class="even">
+                                <td>
+                                                                </td>
+                                <td>1065</td>
+                                <td><a href="http://acm.hit.edu.cn/hoj/problem/view?id=1065"><ins>Entropy</ins></a></td>
+                                <td><div class="ratio-outside"><div class="ratio-inside" style="width: 45.02%"></div></div></td>
+                                <td>(199 / 442) 45.02%</td>
+                            </tr>
+                                            <tr class="odd">
+                                <td>
+                                                                </td>
+                                <td>1066</td>
+                                <td><a href="http://acm.hit.edu.cn/hoj/problem/view?id=1066"><ins>Substrings</ins></a></td>
+                                <td><div class="ratio-outside"><div class="ratio-inside" style="width: 35.12%"></div></div></td>
+                                <td>(216 / 615) 35.12%</td>
+                            </tr>
+                                            <tr class="even">
+                                <td>
+                                                                </td>
+                                <td>1067</td>
+                                <td><a href="http://acm.hit.edu.cn/hoj/problem/view?id=1067"><ins>Rails</ins></a></td>
+                                <td><div class="ratio-outside"><div class="ratio-inside" style="width: 44.00%"></div></div></td>
+                                <td>(745 / 1693) 44.00%</td>
+                            </tr>
+                                            <tr class="odd">
+                                <td>
+                                                                </td>
+                                <td>1068</td>
+                                <td><a href="http://acm.hit.edu.cn/hoj/problem/view?id=1068"><ins>King</ins></a></td>
+                                <td><div class="ratio-outside"><div class="ratio-inside" style="width: 58.27%"></div></div></td>
+                                <td>(155 / 266) 58.27%</td>
+                            </tr>
+                                            <tr class="even">
+                                <td>
+                                                                </td>
+                                <td>1069</td>
+                                <td><a href="http://acm.hit.edu.cn/hoj/problem/view?id=1069"><ins>Prime Land</ins></a></td>
+                                <td><div class="ratio-outside"><div class="ratio-inside" style="width: 51.53%"></div></div></td>
+                                <td>(202 / 392) 51.53%</td>
+                            </tr>
+                                            <tr class="odd">
+                                <td>
+                                                                </td>
+                                <td>1070</td>
+                                <td><a href="http://acm.hit.edu.cn/hoj/problem/view?id=1070"><ins>Word</ins></a></td>
+                                <td><div class="ratio-outside"><div class="ratio-inside" style="width: 47.41%"></div></div></td>
+                                <td>(64 / 135) 47.41%</td>
+                            </tr>
+                                            <tr class="even">
+                                <td>
+                                                                </td>
+                                <td>1071</td>
+                                <td><a href="http://acm.hit.edu.cn/hoj/problem/view?id=1071"><ins>Time</ins></a></td>
+                                <td><div class="ratio-outside"><div class="ratio-inside" style="width: 20.35%"></div></div></td>
+                                <td>(69 / 339) 20.35%</td>
+                            </tr>
+                                            <tr class="odd">
+                                <td>
+                                                                </td>
+                                <td>1072</td>
+                                <td><a href="http://acm.hit.edu.cn/hoj/problem/view?id=1072"><ins>Puzzle</ins></a></td>
+                                <td><div class="ratio-outside"><div class="ratio-inside" style="width: 49.61%"></div></div></td>
+                                <td>(63 / 127) 49.61%</td>
+                            </tr>
+                                            <tr class="even">
+                                <td>
+                                                                </td>
+                                <td>1073</td>
+                                <td><a href="http://acm.hit.edu.cn/hoj/problem/view?id=1073"><ins>Append</ins></a></td>
+                                <td><div class="ratio-outside"><div class="ratio-inside" style="width: 66.67%"></div></div></td>
+                                <td>(62 / 93) 66.67%</td>
+                            </tr>
+                                            <tr class="odd">
+                                <td>
+                                                                </td>
+                                <td>1074</td>
+                                <td><a href="http://acm.hit.edu.cn/hoj/problem/view?id=1074"><ins>Gossiping</ins></a></td>
+                                <td><div class="ratio-outside"><div class="ratio-inside" style="width: 64.71%"></div></div></td>
+                                <td>(55 / 85) 64.71%</td>
+                            </tr>
+                                            <tr class="even">
+                                <td>
+                                                                </td>
+                                <td>1075</td>
+                                <td><a href="http://acm.hit.edu.cn/hoj/problem/view?id=1075"><ins>The Castle</ins></a></td>
+                                <td><div class="ratio-outside"><div class="ratio-inside" style="width: 29.18%"></div></div></td>
+                                <td>(157 / 538) 29.18%</td>
+                            </tr>
+                                            <tr class="odd">
+                                <td>
+                                                                </td>
+                                <td>1076</td>
+                                <td><a href="http://acm.hit.edu.cn/hoj/problem/view?id=1076"><ins>Ordered Fractions</ins></a></td>
+                                <td><div class="ratio-outside"><div class="ratio-inside" style="width: 32.86%"></div></div></td>
+                                <td>(505 / 1537) 32.86%</td>
+                            </tr>
+                                            <tr class="even">
+                                <td>
+                                                                </td>
+                                <td>1077</td>
+                                <td><a href="http://acm.hit.edu.cn/hoj/problem/view?id=1077"><ins>Synchronous Design</ins></a></td>
+                                <td><div class="ratio-outside"><div class="ratio-inside" style="width: 67.24%"></div></div></td>
+                                <td>(39 / 58) 67.24%</td>
+                            </tr>
+                                            <tr class="odd">
+                                <td>
+                                                                </td>
+                                <td>1078</td>
+                                <td><a href="http://acm.hit.edu.cn/hoj/problem/view?id=1078"><ins>u Calculate e</ins></a></td>
+                                <td><div class="ratio-outside"><div class="ratio-inside" style="width: 40.22%"></div></div></td>
+                                <td>(1667 / 4145) 40.22%</td>
+                            </tr>
+                                            <tr class="even">
+                                <td>
+                                                                </td>
+                                <td>1079</td>
+                                <td><a href="http://acm.hit.edu.cn/hoj/problem/view?id=1079"><ins>Problem Bee</ins></a></td>
+                                <td><div class="ratio-outside"><div class="ratio-inside" style="width: 59.60%"></div></div></td>
+                                <td>(59 / 99) 59.60%</td>
+                            </tr>
+                                            <tr class="odd">
+                                <td>
+                                                                </td>
+                                <td>1080</td>
+                                <td><a href="http://acm.hit.edu.cn/hoj/problem/view?id=1080"><ins>Digital Roots</ins></a></td>
+                                <td><div class="ratio-outside"><div class="ratio-inside" style="width: 26.45%"></div></div></td>
+                                <td>(1407 / 5320) 26.45%</td>
+                            </tr>
+                                            <tr class="even">
+                                <td>
+                                                                </td>
+                                <td>1081</td>
+                                <td><a href="http://acm.hit.edu.cn/hoj/problem/view?id=1081"><ins>Scramble Sort</ins></a></td>
+                                <td><div class="ratio-outside"><div class="ratio-inside" style="width: 47.06%"></div></div></td>
+                                <td>(312 / 663) 47.06%</td>
+                            </tr>
+                                            <tr class="odd">
+                                <td>
+                                                                </td>
+                                <td>1082</td>
+                                <td><a href="http://acm.hit.edu.cn/hoj/problem/view?id=1082"><ins>A Well-Formed Problem</ins></a></td>
+                                <td><div class="ratio-outside"><div class="ratio-inside" style="width: 75.51%"></div></div></td>
+                                <td>(37 / 49) 75.51%</td>
+                            </tr>
+                                            <tr class="even">
+                                <td>
+                                                                </td>
+                                <td>1083</td>
+                                <td><a href="http://acm.hit.edu.cn/hoj/problem/view?id=1083"><ins>N-Credible Mazes</ins></a></td>
+                                <td><div class="ratio-outside"><div class="ratio-inside" style="width: 56.68%"></div></div></td>
+                                <td>(106 / 187) 56.68%</td>
+                            </tr>
+                                            <tr class="odd">
+                                <td>
+                                                                </td>
+                                <td>1084</td>
+                                <td><a href="http://acm.hit.edu.cn/hoj/problem/view?id=1084"><ins>Booklet Printing</ins></a></td>
+                                <td><div class="ratio-outside"><div class="ratio-inside" style="width: 46.11%"></div></div></td>
+                                <td>(427 / 926) 46.11%</td>
+                            </tr>
+                                            <tr class="even">
+                                <td>
+                                                                </td>
+                                <td>1085</td>
+                                <td><a href="http://acm.hit.edu.cn/hoj/problem/view?id=1085"><ins>Finding Rectangles</ins></a></td>
+                                <td><div class="ratio-outside"><div class="ratio-inside" style="width: 47.22%"></div></div></td>
+                                <td>(136 / 288) 47.22%</td>
+                            </tr>
+                                            <tr class="odd">
+                                <td>
+                                                                </td>
+                                <td>1086</td>
+                                <td><a href="http://acm.hit.edu.cn/hoj/problem/view?id=1086"><ins>Don't Get Rooked</ins></a></td>
+                                <td><div class="ratio-outside"><div class="ratio-inside" style="width: 70.04%"></div></div></td>
+                                <td>(194 / 277) 70.04%</td>
+                            </tr>
+                                            <tr class="even">
+                                <td>
+                                                                </td>
+                                <td>1087</td>
+                                <td><a href="http://acm.hit.edu.cn/hoj/problem/view?id=1087"><ins>Self Numbers</ins></a></td>
+                                <td><div class="ratio-outside"><div class="ratio-inside" style="width: 42.72%"></div></div></td>
+                                <td>(646 / 1512) 42.72%</td>
+                            </tr>
+                                            <tr class="odd">
+                                <td>
+                                                                </td>
+                                <td>1088</td>
+                                <td><a href="http://acm.hit.edu.cn/hoj/problem/view?id=1088"><ins>Do the Untwist</ins></a></td>
+                                <td><div class="ratio-outside"><div class="ratio-inside" style="width: 65.42%"></div></div></td>
+                                <td>(297 / 454) 65.42%</td>
+                            </tr>
+                                            <tr class="even">
+                                <td>
+                                                                </td>
+                                <td>1089</td>
+                                <td><a href="http://acm.hit.edu.cn/hoj/problem/view?id=1089"><ins>Word Amalgamation</ins></a></td>
+                                <td><div class="ratio-outside"><div class="ratio-inside" style="width: 51.13%"></div></div></td>
+                                <td>(385 / 753) 51.13%</td>
+                            </tr>
+                                            <tr class="odd">
+                                <td>
+                                                                </td>
+                                <td>1090</td>
+                                <td><a href="http://acm.hit.edu.cn/hoj/problem/view?id=1090"><ins>The Staircases</ins></a></td>
+                                <td><div class="ratio-outside"><div class="ratio-inside" style="width: 42.17%"></div></div></td>
+                                <td>(627 / 1487) 42.17%</td>
+                            </tr>
+                                            <tr class="even">
+                                <td>
+                                                                </td>
+                                <td>1091</td>
+                                <td><a href="http://acm.hit.edu.cn/hoj/problem/view?id=1091"><ins>Tin Cutter</ins></a></td>
+                                <td><div class="ratio-outside"><div class="ratio-inside" style="width: 62.03%"></div></div></td>
+                                <td>(49 / 79) 62.03%</td>
+                            </tr>
+                                            <tr class="odd">
+                                <td>
+                                                                </td>
+                                <td>1092</td>
+                                <td><a href="http://acm.hit.edu.cn/hoj/problem/view?id=1092"><ins>Forcal</ins></a></td>
+                                <td><div class="ratio-outside"><div class="ratio-inside" style="width: 66.67%"></div></div></td>
+                                <td>(48 / 72) 66.67%</td>
+                            </tr>
+                                            <tr class="even">
+                                <td>
+                                                                </td>
+                                <td>1093</td>
+                                <td><a href="http://acm.hit.edu.cn/hoj/problem/view?id=1093"><ins>L-system</ins></a></td>
+                                <td><div class="ratio-outside"><div class="ratio-inside" style="width: 43.84%"></div></div></td>
+                                <td>(32 / 73) 43.84%</td>
+                            </tr>
+                                            <tr class="odd">
+                                <td>
+                                                                </td>
+                                <td>1094</td>
+                                <td><a href="http://acm.hit.edu.cn/hoj/problem/view?id=1094"><ins>Packets</ins></a></td>
+                                <td><div class="ratio-outside"><div class="ratio-inside" style="width: 36.79%"></div></div></td>
+                                <td>(330 / 897) 36.79%</td>
+                            </tr>
+                                            <tr class="even">
+                                <td>
+                                                                </td>
+                                <td>1095</td>
+                                <td><a href="http://acm.hit.edu.cn/hoj/problem/view?id=1095"><ins>Crosswords</ins></a></td>
+                                <td><div class="ratio-outside"><div class="ratio-inside" style="width: 32.84%"></div></div></td>
+                                <td>(111 / 338) 32.84%</td>
+                            </tr>
+                                            <tr class="odd">
+                                <td>
+                                                                </td>
+                                <td>1096</td>
+                                <td><a href="http://acm.hit.edu.cn/hoj/problem/view?id=1096"><ins>Intervals</ins></a></td>
+                                <td><div class="ratio-outside"><div class="ratio-inside" style="width: 37.53%"></div></div></td>
+                                <td>(146 / 389) 37.53%</td>
+                            </tr>
+                                            <tr class="even">
+                                <td>
+                                                                </td>
+                                <td>1097</td>
+                                <td><a href="http://acm.hit.edu.cn/hoj/problem/view?id=1097"><ins>Robot</ins></a></td>
+                                <td><div class="ratio-outside"><div class="ratio-inside" style="width: 46.04%"></div></div></td>
+                                <td>(128 / 278) 46.04%</td>
+                            </tr>
+                                            <tr class="odd">
+                                <td>
+                                                                </td>
+                                <td>1098</td>
+                                <td><a href="http://acm.hit.edu.cn/hoj/problem/view?id=1098"><ins>NetWork</ins></a></td>
+                                <td><div class="ratio-outside"><div class="ratio-inside" style="width: 50.33%"></div></div></td>
+                                <td>(306 / 608) 50.33%</td>
+                            </tr>
+                                            <tr class="even">
+                                <td>
+                                                                </td>
+                                <td>1099</td>
+                                <td><a href="http://acm.hit.edu.cn/hoj/problem/view?id=1099"><ins>Lining Up</ins></a></td>
+                                <td><div class="ratio-outside"><div class="ratio-inside" style="width: 28.77%"></div></div></td>
+                                <td>(376 / 1307) 28.77%</td>
+                            </tr>
+                                            <tr class="odd">
+                                <td>
+                                                                </td>
+                                <td>1100</td>
+                                <td><a href="http://acm.hit.edu.cn/hoj/problem/view?id=1100"><ins>Simply Syntax</ins></a></td>
+                                <td><div class="ratio-outside"><div class="ratio-inside" style="width: 42.33%"></div></div></td>
+                                <td>(491 / 1160) 42.33%</td>
+                            </tr>
+                    									</tbody>
+                                </table>
+
+				</div>
+				<div class="clear"></div>
+				</div><!-- End main-in -->
+			</div><!-- End main -->
+			<div id="bottom">
+				<div id="bottom-l">
+					<div id="bottom-r">
+					</div>
+				</div>
+			</div>
+		</div><!-- End wrapper2 -->
+	</div><!-- End wrapper -->
+	<div id="copyright">
+		<p>Copyright © 1998-2011  HIT ACM/ICPC Group</p>
+		<p>All Rights Reserved.</p>
+	</div>
+</body>
+</html>
+
+
