@@ -1,0 +1,32 @@
+<html>
+	<head>
+		<title>测试验证码</title>
+		<meta charset="utf-8">
+	</head>
+	<body>
+		
+	<canvas id="mycanvas" ></canvas>
+	<img src="1.png" id="img">
+	</body>
+	<script type="text/javascript">
+	//var _url='1.png'
+var _canvas=document.createElement("canvas");
+_canvas.id="goods"
+		//=document.getElementById("mycanvas");
+		var _content =_canvas.getContext("2d");
+		var _img=new Image();
+		_img.src=document.getElementById("img").src;
+		console.info(_canvas)
+		console.info(_img.src)
+		_img.crossOrigin="Anonymous";
+		_img.onload=function(){
+			_content.drawImage(_img,0,0,_img.width,_img.height);
+			//_imageData=_content.getImageData(0,0,200,200);
+			//var px=_imageData.data;
+			//console.info(px)
+			//dir(_imageData)
+		}
+		document.body.appendChild(_canvas)
+	
+	</script>
+</html!>
