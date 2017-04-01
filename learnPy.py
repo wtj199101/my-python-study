@@ -233,3 +233,289 @@
 
 #面向对象高级
 #__slots__ 限制类添加的属性
+# @property
+class Student(object):
+	@property
+	def score(self):
+		return self._score
+	@score.setter
+	def score(self,value):
+		if(not isinstance (value,int)):
+			raise TypeError("value must be int")
+		if value<0 or value>100 :
+			raise TypeError("value must be 0~100")
+		self._score=value
+# s=Student()
+# s.score=60
+# print(s.score)
+# class Student(object):
+# s=Student()
+# s._score=60
+# print(s.score)
+# @property get 属性 _score和score都是对象属性 不是类属性 这两个相同
+# 多重继承
+# class Dog(Mammal, Runnable):  MixIn
+# 常见定制类
+# __str__ print(object) 显示的字符串
+# __repr__ object 命令行显示的字符串
+# __iter__ 返回迭代对象 还需实现__next__取得下一个值
+# __getitem__ object  类型 a()[0] 这种下标取值要实现这个方法
+# __setitem__  __delitem__
+# __getattr__ 当获取一个不存在的属相时，会调用这个方法
+
+# __call__ 实例对象本身调用
+
+# 判断一个变量是对象还是函数 callable()
+# print(callable(Student()))
+# class chain(object):
+# 	def __init__(self,path=''):
+# 		self._path=path
+# 	def __getattr__(self,path):
+# 		return chain('%s/%s'%(self._path,path))
+# 	def __str__(self):
+# 		return self._path
+# 	def __call__(self,path):
+# 		return chain('%s/%s'%(self._path,path))
+# 	__repr__=__str__
+# print(chain().status.user('sdfsd').timeline.list)  ##/status/user/sdfsd/timeline/list
+# .status 调用的是 __getattr__ ,.user() 调用的是 __call__  
+
+# enum 枚举类
+# from enum import  Enum
+# Month=Enum('month',('jan','Feb','Mar'))
+# for name, member in Month.__members__.items():
+#     print(name, '=>', member, ',', member.value)
+# from enum import Enum, unique
+
+# @unique
+# class Weekday(Enum):
+#     Sun=9 # Sun的value被设定为0
+#     Mon = 1
+#     Tue = 2
+#     Wed = 3
+#     Thu = 4
+#     Fri = 5
+#     Sat = 6
+# day1=Weekday.Sun.value
+# # day1=Weekday(1)
+# print(day1)
+
+# 元类
+# 动态创建类
+# def fn(self,name='world'):
+# 	print('hello,%s'%name)
+# Hello=type("Hello",(object,),dict(hello=fn))
+# h=Hello()
+# h.hello(name="goods")
+
+# metaclass 元类 定义metaclass 创建类，创建实例
+#metaclass 是类模板，继承type
+# class ListMetaClass(type):
+# 	def __new__(cls,name,bases,attrs): #cls=当前创建类对象，name=类的名字，bases=父类集合，attrs=类方法集合
+# 		attrs['add']=lambda self,value:self.append(value)
+# 		return type.__new__(cls,name,bases,attrs)
+# class Mylist(list,metaclass=ListMetaClass):
+# 	pass
+
+# L=Mylist()
+# L.add(1)
+# print(L)  使用范围 orm 可以使用必须动态生成的时候使用
+# 错误、调试和测试
+# import logging
+# import pdb
+# try:
+# 	# pdb.set_trace()
+# 	r=10/2
+# 	# assert(r)
+# except Exception as e :
+# 	print(e)
+# 	logging.exception(e)
+# 	raise  # 不带参数原样抛出
+# finally:
+# 	print("end")
+##测试会logging  会debug 就行
+# IO编程
+# 文件:
+# open()
+# read()
+# close()
+# 内存：
+# StringIO
+# from io import StringIO
+# f=StringIO()
+# f.write("hello")
+# print(f.getvalue())
+# BytesIO 操作二进制
+# os.name #nt windows posix linux
+# os.version.get('path') #系统环境path
+# import os
+# # print(os.path.abspath('.'))#C:\Users\Administrator\Desktop\pyTest
+# # os.path.join(os.path.abspath('.'),"test")#连接字符串  os.path.split() 分隔路径  os.path.splittext()得到文件扩展名
+# # os.mkdir()  os.rmdir()  创建和删除目录
+# print(os.path.join(os.path.abspath('.'),"learnPy.py"))
+# print(os.path.splitext(os.path.join(os.path.abspath('.'),"learnPy.py"))[1])#.py
+# # os.rename(a,b) || os.remove()
+# print([x for x in os.listdir('.') if os.path.isdir(x)])  #['.git', 'img', 'log', 'pytest', 'validateimg']
+# print([x for x in os.listdir('.') if os.path.isfile(x) and os.path.splitext(x)[1]=='.py']) #['learnPy.py']
+# pickle 序列化
+# import pickle 
+# d=dict(name='bob',age=20)
+# pickle.dumps(d,file) 可以序列化写入文件
+# pickle.loads() 反序列化
+# print(d)
+#json 
+# import json
+# d=dict(name="zhangsan",age=20)
+# print(json.dumps(d))
+# json.loads()
+
+# 多进程和多线程
+# linux 用 os.fork()
+
+# import os,time,random
+# # print(os.getpid())
+# # print(os.getppid())
+# from multiprocessing import Process
+# from multiprocessing import Pool
+
+# def long_time_task(name):
+# 	print('run child procss %s (%s)'%(name,os.getpid()))
+# 	start =time.time()
+# 	time.sleep(random.random()*3)
+# 	end =time.time()
+# 	print('Task %s run %0.2f seconds'%(name,(end-start)))
+# if  __name__=='__main__':
+# 	print('parent proces %s.'%os.getpid())
+# 	p=Pool(4)
+# 	for i in range(5):
+# 		p.apply_async(long_time_task,args=(i,))
+
+	# p=Process(target=run_proc,args=('test',))
+	# print('wating all subprocess done')
+	# p.close()
+	# p.join()
+	# print('All process end')
+
+
+	# subprocess 子进程   communicate 可以继续
+# import subprocess
+# p=subprocess.Popen(['java'], stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+
+# # out,err=p.communicate(b' -version')
+# # print(out.decode('utf-8'))
+# print('exit Code:',p.returncode)
+#线程
+# import time,threading
+# def loop():
+# 	print('threading %s is running .'%threading.current_thread().name)
+# 	n=0
+# 	while n<5:
+# 		n+=1
+# 		print('threading %s >>>%s'%(threading.current_thread().name,n))
+# 		time.sleep(3)
+# 	print('thread %s end'%threading.current_thread().name)
+# print('thread %s is running.'%threading.current_thread().name)
+# t=threading.Thread(target=loop,name='LoopThread')
+# t2=threading.Thread(target=loop,name='LoopThread2')
+# t.start()
+# t2.start()
+# t.join()
+# t2.join()
+# print('thread  %s is end '%threading.current_thread().name)
+# threading.local() threadLocal 跟其他语言一样保存线程变量的
+# 线程因为python 有gil 全局的锁。每个线程执行一段时间放弃这个锁。下个线程才有可能拿到执行。所以只是单线程在跑。python还是用多进程
+# 好点。
+
+# 常用内建模块
+# 正则
+# s=r'dsfsad\--'  r不考虑转译
+# print(s)
+# import re
+# if re.match(r'\d{3}\-\d{3,8}','010-12345'):
+# 	print('ok')
+# # re 编译  非贪婪配置加?
+# re_telephone = re.compile(r'^(\d{3})-(\d{3,8})$')
+# print(re_telephone.match('010-12345').groups())
+# print(re.match(r'^(\d+?)(0*)$', '102300').groups())
+# from datetime import datetime,timedelta
+# print(datetime.now())#2017-04-01 14:51:17.366733datetime.strptime()
+# dates=datetime.strptime('2017-04-01 14:51:17','%Y-%m-%d %H:%M:%S')
+# print(type(dates))
+# strd=dates.strftime('%Y-%m-%d %H:%M:%S')
+# print(type(strd))
+# now=datetime.now()
+# now2=now+timedelta(days=2,hours=1)
+# print(now2)
+
+# collections
+# namedtuple
+# OrderedDict 有序的dict  根据插入的顺序排序
+# Counter 计数器
+
+# base64 编码解码
+
+#struct 解决二进制数据类虚拟改
+
+#hashlib 提供了常见的摘要算法 MD5,SHA-1
+# import hashlib
+# md5=hashlib.md5()
+# md5.update('123456'.encode('utf-8'))
+# print(md5.hexdigest()) #e10adc3949ba59abbe56e057f20f883e
+# sha1=hashlib.sha1()
+# sha1.update('123456'.encode('utf-8'))
+# print(sha1.hexdigest())#7c4a8d09ca3762af61e59520943dc26494f8941b
+
+#itertools
+# count() 自然序列不限重复
+# cycle() 传入的值无线重复
+# repeat()把一个值无线重复。可控次数
+# chain()把一组迭代对象串联起来，形成一个更大的迭代器：
+# groupby()迭代器中相邻的重复元素挑出来放在一起
+
+#contextlib
+#xml
+#HTMLParser
+#urllib
+
+# 常见第三方模块
+# pillow 图像 
+# virtualenv 隔离的python环境
+
+# tcp编程
+# import socket
+# s=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+# s.connect(('www.baidu.com',80))
+
+# SMTP是发送邮件的协议，Python内置对SMTP的支持，可以发送纯文本邮件、HTML邮件以及带附件的邮件。
+# Python对SMTP支持有smtplib和email两个模块，email负责构造邮件，smtplib负责发送邮件。
+# from email.mime.text import MIMEText
+# msg=MIMEText('hello,world.send by python','plain','utf-8')
+# from_addr=input('from:')
+# password=input('password:')
+
+# to_addr=input("to:")
+# smtp_server=input("SMTP server:")
+# import smtplib
+# server=smtplib.SMTP(smtp_server,25)
+# server.set_debuglevel(1)
+# server.login(from_addr,password)
+# server.sendmail(from_addr,[to_addr],msg.as_string())
+# server.quit()
+# smtp 发送邮件pop3接收邮件
+# 数据库 sqlite mysql sqlAlchemy
+# web 开发
+# WSGI
+# 从wsgiref模块导入:
+# from wsgiref.simple_server import make_server
+# # 导入我们自己编写的application函数:
+# from hello import application
+
+# # 创建一个服务器，IP地址为空，端口是8000，处理函数是application:
+# httpd = make_server('', 8000, application)
+# print('Serving HTTP on port 8000...')
+# # 开始监听HTTP请求:
+# httpd.serve_forever()
+
+# # 框架和模板
+# 协程
+# asyncio 异步io
